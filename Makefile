@@ -1,4 +1,4 @@
-objects = main.o 
+objects = main.o Control.o View.o ASCIIText.o LinAlg.o
 # testobjects = test.o
 
 all: $(objects)
@@ -7,17 +7,23 @@ all: $(objects)
 # test: $(testobjects)
 # 	g++ -o test $(testobjects)
 
-main.o: main.cpp LMModules.h
+main.o: main.cpp
 	g++ -c main.cpp
-
-LMModules.o: LMModules.cpp LMModules.h
-	g++ -c LMModules.cpp
 
 # test.o: test.cc
 # 	g++ -c test.cc
 
-# Control.o: Control.h Control.cc
-# 	g++ -c Control.cc
+Control.o: Control.h Control.cpp
+	g++ -c Control.cpp
 
-# View.o: View.h View.cc
-# 	g++ -c View.cc
+View.o: View.h View.cpp
+	g++ -c View.cpp
+
+ASCIIText.o: ASCIIText.h ASCIIText.cpp
+	g++ -c ASCIIText.cpp
+
+LinAlg.o: LinAlg.h LinAlg.cpp
+	g++ -c LinAlg.cpp
+
+clean:
+	rm *.o all

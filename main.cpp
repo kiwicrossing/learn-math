@@ -1,8 +1,10 @@
 #include <iostream>
-#include "LMModules.h"
+
+#include "Control.h"
 
 int main()
 {
-    cout << "Hello World!" << endl;
+    Control control;
+    control.launch();
     return 0;
 }
